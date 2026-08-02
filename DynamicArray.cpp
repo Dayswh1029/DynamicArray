@@ -9,18 +9,6 @@ DynamicArray::DynamicArray():_data((int*) malloc(2*sizeof(int))),capacity(2),siz
         // 没有返回值！ 直接抛出 错误！
     }
 }
-DynamicArray::DynamicArray(int* p,size_t size):_data(p),size(size),capacity(2*size)
-{
-    if(_data==0)
-    {
-        std::cerr<<"malloc failed"<<std::endl;
-        throw std::bad_alloc{};
-        // 没有返回值！ 直接抛出 错误！
-
-    }
-
-}
-
 
 void DynamicArray::add(int value)
 {

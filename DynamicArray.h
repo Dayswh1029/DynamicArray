@@ -6,7 +6,6 @@ class DynamicArray{
 
     public:
         DynamicArray();
-        DynamicArray(int* p,size_t size);
         void add(int value);
 
         int get(size_t index);
