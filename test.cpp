@@ -1,12 +1,9 @@
 #include "DynamicArray.h"
 #include "DynamicArray.cpp"
-#include <cstddef>
 #include<iostream>
 
 int main()
 {
-
-    
     try {
 
         DynamicArray arr;
@@ -19,7 +16,6 @@ int main()
             std::cout<<"arr["<<i<<"] = "<<arr.get(i)<<std::endl;
         }
 
-   
     } catch(const std::bad_alloc&e)
     {
         std::cerr<<"Memory access error: "<<e.what()<<std::endl;

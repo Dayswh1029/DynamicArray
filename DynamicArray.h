@@ -1,24 +1,23 @@
 #pragma once
 #include <cstddef>
 #include<iostream>
-class DynamicArray{
 
+class DynamicArray{
 
     public:
         DynamicArray();
-        DynamicArray(int* p);
+        DynamicArray(int* p,size_t size);
         void add(int value);
 
         int get(size_t index);
         size_t getSize()const;
         size_t getCapacity()const;
         ~DynamicArray();
-
-
     private:
         int* _data;
         size_t capacity; //容量
         size_t size;   // 已经被利用的元素！
+
     private:
 
         void resize(size_t new_capacity){
@@ -30,6 +29,5 @@ class DynamicArray{
             _data=temp;
             capacity=new_capacity;
         }
-
 
 };

@@ -1,8 +1,5 @@
 #include "DynamicArray.h"
-#include <cstddef>
 #include<iostream>
-#include <stdexcept>
-
 DynamicArray::DynamicArray():_data((int*) malloc(2*sizeof(int))),capacity(2),size(0)
 {
     if(_data==0)
@@ -11,8 +8,16 @@ DynamicArray::DynamicArray():_data((int*) malloc(2*sizeof(int))),capacity(2),siz
         throw std::bad_alloc{};
         // 没有返回值！ 直接抛出 错误！
     }
+}
+DynamicArray::DynamicArray(int* p,size_t size):_data(p),size(size),capacity(2*size)
+{
+    if(_data==0)
+    {
+        std::cerr<<"malloc failed"<<std::endl;
+        throw std::bad_alloc{};
+        // 没有返回值！ 直接抛出 错误！
 
-    std::cout<<"non-parameter constructor!"<<std::endl;
+    }
 
 }
 
@@ -46,8 +51,9 @@ size_t DynamicArray::getCapacity()const{
 
     return capacity;
 }
+
 DynamicArray::~DynamicArray()
 {
     free(_data);
-    std::cout<<"deconstructor!!"<<std::endl;
+    //std::cout<<"deconstructor!!"<<std::endl;
 }
