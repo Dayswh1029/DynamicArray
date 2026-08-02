@@ -8,7 +8,7 @@ class DynamicArray{
         DynamicArray();
         void add(int value);
 
-        int get(size_t index);
+        int get(size_t index) const;
         size_t getSize()const;
         size_t getCapacity()const;
         ~DynamicArray();

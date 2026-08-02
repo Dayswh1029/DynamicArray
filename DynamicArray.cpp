@@ -21,7 +21,7 @@ void DynamicArray::add(int value)
 
 }
 
-int DynamicArray::get(size_t index)
+int DynamicArray::get(size_t index) const
 {
     if(index>=size){
         throw std::out_of_range{"index out of range "};
