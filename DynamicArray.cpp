@@ -2,7 +2,7 @@
 #include<iostream>
 DynamicArray::DynamicArray():_data((int*) malloc(2*sizeof(int))),capacity(2),size(0)
 {
-    if(_data==0)
+    if(_data==nullptr)
     {
         std::cerr<<"malloc failed"<<std::endl;
         throw std::bad_alloc{};
@@ -12,7 +12,7 @@ DynamicArray::DynamicArray():_data((int*) malloc(2*sizeof(int))),capacity(2),siz
 
 void DynamicArray::add(int value)
 {
-    if(size==capacity)
+    if(size>=capacity)
     {
         // 扩容！！！！！
         resize(capacity*2);
