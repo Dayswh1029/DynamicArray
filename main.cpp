@@ -1,6 +1,7 @@
 #include "DynamicArray.h"
 #include "DynamicArray.cpp"
 #include<iostream>
+
 int main()
 {
     try {
@@ -14,6 +15,7 @@ int main()
         {
             std::cout<<"arr["<<i<<"] = "<<arr.get(i)<<std::endl;
         }
+        std::cout<<arr[1]<<std::endl;
 
     } catch(const std::bad_alloc&e)
     {
@@ -27,6 +29,7 @@ int main()
         return 1;
 
     }
+
 
     return 0;
 }

@@ -18,6 +18,7 @@ void DynamicArray::add(int value)
         resize(capacity*2);
     }
     _data[size++]=value; // 添加元素！ 
+    // 等价于 *(_data+size)=value; size++;
 
 }
 
@@ -40,8 +41,21 @@ size_t DynamicArray::getCapacity()const{
     return capacity;
 }
 
+int&  DynamicArray::operator[](size_t index)
+{
+    if(index>size)
+    {
+        throw std::out_of_range{"index out of range "};
+    }
+   // int temp = get(index);
+
+    return _data[index];
+}
+
 DynamicArray::~DynamicArray()
 {
     free(_data);
     //std::cout<<"deconstructor!!"<<std::endl;
+    _data=nullptr;
+
 }

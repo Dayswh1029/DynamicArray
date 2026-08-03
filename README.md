@@ -34,6 +34,9 @@ _data[size++]=value; // 添加元素！
 // 增加一些功能
 # 我们增加一些 内存池的练习！
 
+allocate() 申请分配空间
+deallocate() 释放空间 内存
+
 
 
 

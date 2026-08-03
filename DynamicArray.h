@@ -1,4 +1,5 @@
 #pragma once
+#include <cstddef>
 #include<iostream>
 
 class DynamicArray{
@@ -10,6 +11,9 @@ class DynamicArray{
         int get(size_t index) const;
         size_t getSize()const;
         size_t getCapacity()const;
+        // 重载 []
+       int&  operator[](size_t index);
+
         ~DynamicArray();
     private:
         int* _data;
